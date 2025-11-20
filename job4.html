@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>城市书店周末活动展示</title>
+    <style>
+        /* 页面整体：背景渐变 + 居中布局（用 text-align 和 inline-block，不用 margin/padding/border） */
+        body {
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            background: linear-gradient(135deg, #f6ede3, #fdf7f1);
+            color: #3b3025;
+            text-align: center;
+        }
+
+        /* 主内容“卡片”区域，用 box-shadow 制造层次感，不用 border/padding/margin */
+        .page {
+            display: inline-block;
+            background-color: #FFE6EE;
+            box-shadow: 0 0 30px rgba(80, 58, 35, 0.25);
+            text-align: left;
+            max-width: 720px;
+        }
+
+        /* 群组选择器：统一标题的颜色与字间距 */
+        h1, h2, h3, h4, h5, h6 {
+            color: #5b4636;
+            letter-spacing: 1px;
+        }
+
+        /* 类选择器：居中与右对齐 */
+        .center {
+            text-align: center;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        /* 只作用在 p 标签、id 为 intro */
+        /* 说明：p#intro 只匹配 <p id="intro">，不会影响 <h2 id="intro"> */
+        p#intro {
+            font-size: 140%;
+            font-weight: bold;
+            color: #c8493b;
+        }
+
+        /* 活动介绍的普通段落：通过行高与字间距来增强视觉舒适度（不用 padding/margin） */
+        .intro-text {
+            line-height: 1.7;
+            letter-spacing: 0.5px;
+        }
+
+        /* 表格所在区域标题 */
+        .section-title {
+            text-align: center;
+        }
+
+        /* 表格基础样式：用背景色和行高区分层次，不用 border/padding/margin */
+        table {
+            width: 100%;
+            background-color: #FF2491;
+            font-size: 90%;
+        }
+
+        th {
+            background-color: #EECBAD;
+            font-weight: bold;
+            text-align: left;
+            line-height: 2.2;
+        }
+
+        td {
+            line-height: 2.0;
+        }
+
+        /* 斑马纹行效果，让表格更易读 */
+        table tr:nth-child(even) {
+            background-color: #fbf0de;
+        }
+
+        /* 鼠标移入整行高亮显示 */
+        table tr:hover {
+            background-color: #eed8be;
+        }
+
+        /* 后代选择器：div 里的 table 里的 a
+           只突出显示报名名单中的名字链接，不影响其他链接 */
+        div table a {
+            font-weight: bold;
+            font-size: 110%;
+            color: #8b3b30;
+        }
+
+        /* 全局链接伪类样式 */
+        a:link {
+            color: #b6553b;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #7a7b52;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #e36a4c;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: #3c4f9f;
+            text-decoration: underline;
+        }
+
+        /* 带类名的链接：重点与次要链接 */
+        a.red:link {
+            color: #e25b3d;
+        }
+
+        a.red:active {
+            color: #3046a1;
+        }
+
+        a.blue:link {
+            color: #4b7f60;
+        }
+
+        a.blue:active {
+            color: #a53aa4;
+        }
+
+        /* 段落首字放大 + 特别颜色，营造杂志风排版感 */
+        p::first-letter {
+            font-size: 180%;
+            color: #c45b3f;
+        }
+
+        /* div 的第一行高亮
+           底部公告区的第一行会格外醒目，其他 div 第一行也会略微强调 */
+        div::first-line {
+            color: #b04832;
+            font-weight: bold;
+        }
+
+        /* 底部公告文字略小，让层次更清晰 */
+        .notice {
+            font-size: 90%;
+            line-height: 1.6;
+        }
+
+        /* 小分隔线：用背景渐变模拟，无 border */
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, rgba(91,70,54,0), rgba(91,70,54,0.6), rgba(91,70,54,0));
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- 顶部标题区 -->
+    <h1 class="center">轻音乐阅读夜 · Soft Music Reading主题活动</h1>
+
+    <div class="divider"></div><br>
+
+    <!-- 活动介绍区 -->
+    <div>
+              <h2 id="intro" class="center">本周主题：轻音乐阅读夜</h2>
+
+        <p class="intro-text right">
+            当暮色漫过窗棂，白日的喧嚣渐渐沉淀，我们以轻柔旋律为引，邀你赴一场与文字的深夜之约。
+        </p>
+
+        <p class="intro-text center">
+            暖黄的灯光会悄悄裹住每一个角落，指尖划过书页的沙沙声，会与钢琴的浅吟、提琴的私语轻轻相拥 —— 没有急促的节奏，只有音符像月光般漫过桌面，为你托起手中的故事。你可以带着一本读了半程的书，在旋律里续上未竟的章节；也可以暂放下书页，听身旁人轻声分享某段文字里的心动，或是某个与书有关的、温柔的小事。
+        </p>
+
+               <p id="intro">
+            若你愿意，可携带一本想分享的书；若想安静阅读，我们也为你准备了适合夜读的文字与暖饮。
+        </p>
+    </div>
+
+    <br><div class="divider"></div><br>
+
+    <!-- 活动报名情况表格区 -->
+    <div>
+        <h3 class="section-title">活动报名名单</h3>
+
+        <table>
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>联系方式</th>
+                <th>阅读状态</th>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td><a href="https://example.com/person1">张三</a></td>
+                <td>138****0001</td>
+                <td>专注中</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td><a href="https://example.com/person2">李四</a></td>
+                <td>139****0002</td>
+                <td>松弛中</td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td>王五</td>
+                <td>137****0003</td>
+                <td>聆听中</td>
+            </tr>
+        </table>
+    </div>
+
+    <br><div class="divider"></div><br>
+
+       <div class="center">
+        <p>
+            <a class="red" href="https://hongchenwusdnu.github.io/bookstore/job4.html">查看往期活动照片</a><br>
+            <a class="blue" href="https://ykx88.github.io/ykx88/job3.html">在线咨询活动详情</a>
+        </p>
+    </div>
+
+    <br><div class="divider"></div><br>
+
+       <div class="notice">
+        城市书店地址：XX 市 XX 区 XX 路 XX 号「微光书社」2 楼阅读空间<br>
+        日期：202X 年 X 月 X 日（周 X）时段：19:30 - 21:30<br>
+        温馨提醒：夜间活动建议提早到达现场，如需签名书请在前台登记。
+    </div>
+
+    <br>
+
+</div>
+
+</body>
+</html>
